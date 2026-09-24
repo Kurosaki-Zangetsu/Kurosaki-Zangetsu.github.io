@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DataNest | Python and Excel Automation Freelancer</title>
+<meta name="description" content="DataNest builds Python-powered Excel automation: CSV cleaning, spreadsheet merging, automated reports and custom scripts. Try three live demos in your browser.">
+<meta name="theme-color" content="#102B34">
+<meta property="og:title" content="DataNest: Smart Data. Less Work.">
+<meta property="og:description" content="Python and Excel automation, data cleaning and automated reports.">
+<meta property="og:image" content="assets/logo-512.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home"><img src="assets/logo.png" width="36" height="36" alt="">DataNest</a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+    <nav id="menu" aria-label="Main">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section id="home" class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <p class="tag">@datanestpy &middot; Python Developer &middot; Excel Automation Specialist</p>
+      <h1>Automate Your Spreadsheets. Simplify Your Work.</h1>
+      <p class="lead">I build Python-powered Excel automation tools that turn repetitive tasks into efficient workflows. From cleaning messy spreadsheets to generating automated reports, I help businesses save time and work smarter.</p>
+      <div class="btns"><a class="btn" href="#projects">Explore My Projects</a><a class="btn ghost" href="https://www.fiverr.com/datanestpy" target="_blank" rel="noopener">Hire Me on Fiverr</a></div>
+      <p class="slogan">Smart Data. Less Work.</p>
+    </div>
+    <div class="mock" aria-label="Example Python script and its cleaned output">
+      <div class="bar"><i></i><i></i><i></i><span>clean_orders.py</span></div>
+<pre><code><b>import</b> pandas <b>as</b> pd
+
+df = pd.read_csv(<s>"orders.csv"</s>)
+df.columns = df.columns.str.strip().str.lower()
+df = df.drop_duplicates().dropna(how=<s>"all"</s>)
+df.to_excel(<s>"clean_report.xlsx"</s>, index=<b>False</b>)</code></pre>
+      <div class="bar"><span>clean_report.xlsx</span></div>
+      <table><tr><th>order_id</th><th>customer</th><th>total</th></tr><tr><td>1001</td><td>Ava Johnson</td><td>120.50</td></tr><tr><td>1002</td><td>Liam Chen</td><td>89.99</td></tr><tr><td>1003</td><td>Sofia Reyes</td><td>240.00</td></tr></table>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="sec">
+  <div class="wrap">
+    <h2>Services</h2><p class="sub">Practical automation for teams that spend too much time in spreadsheets.</p>
+    <div class="grid4">
+      <article class="card"><h3>Excel and CSV Automation</h3><p>Scripts that read, transform and write spreadsheet files for you.</p><p><strong>Benefit:</strong> hours of copy-paste replaced by one run.</p><p class="use"><strong>Use case:</strong> combine weekly branch exports into one master file.</p></article>
+      <article class="card"><h3>Data Cleaning and Processing</h3><p>Remove duplicates, fix formats, trim whitespace and flag missing values.</p><p><strong>Benefit:</strong> consistent data you can trust.</p><p class="use"><strong>Use case:</strong> tidy a customer list before an email campaign.</p></article>
+      <article class="card"><h3>Automated Reports</h3><p>Summaries, totals and charts generated from your raw data on demand.</p><p><strong>Benefit:</strong> the same report every time, without manual work.</p><p class="use"><strong>Use case:</strong> monthly sales summary by product.</p></article>
+      <article class="card"><h3>Custom Python Scripts</h3><p>Small tools built around your exact workflow and file formats.</p><p><strong>Benefit:</strong> a solution that fits, not a workaround.</p><p class="use"><strong>Use case:</strong> rename, sort and validate files in a folder.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="sec alt">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Three working demos. They use fictional data, are not client work, and run entirely in your browser. Files never leave your device.</p>
+    <p class="note-box">The demos are JavaScript versions of the logic I use in Python. They handle CSV files only. My Fiverr deliveries use pandas and openpyxl and can work with .xlsx workbooks.</p>
+
+    <article class="demo" id="cleaner">
+      <h3>Excel Data Cleaner</h3>
+      <p>Removes duplicate rows, trims whitespace, standardizes column names and counts missing values. Portfolio demo, fictional data.</p>
+      <div class="ctl"><button class="btn sm" id="c-sample">Use sample data</button><label class="btn sm ghost-d">Upload CSV<input type="file" id="c-file" accept=".csv,text/csv"></label><button class="btn sm ghost-d" id="c-dl" disabled>Download cleaned CSV</button></div>
+      <p class="msg" id="c-msg" role="alert" hidden></p>
+      <div class="stats" id="c-stats"></div>
+      <div class="two"><div><h4>Before</h4><div id="c-before"><p class="empty">Load the sample data or upload a CSV to see the result.</p></div></div><div><h4>After</h4><div id="c-after"></div></div></div>
+    </article>
+
+    <article class="demo" id="merger">
+      <h3>Spreadsheet Merger</h3>
+      <p>Combines several CSV files into one, matching columns by name. Portfolio demo, fictional sample files.</p>
+      <div class="ctl"><label class="btn sm">Upload CSV files<input type="file" id="m-file" accept=".csv,text/csv" multiple></label><button class="btn sm ghost-d" id="m-sample">Load sample files</button><button class="btn sm ghost-d" id="m-clear">Clear</button><button class="btn sm ghost-d" id="m-dl" disabled>Download merged CSV</button><label class="chk"><input type="checkbox" id="m-shared"> Keep only columns shared by all files</label></div>
+      <p class="msg" id="m-msg" role="alert" hidden></p>
+      <ul class="files" id="m-files"></ul>
+      <div class="stats" id="m-stats"></div>
+      <div id="m-prev"><p class="empty">Add two or more CSV files, or load the samples.</p></div>
+    </article>
+
+    <article class="demo" id="sales">
+      <h3>Automated Sales Reporting</h3>
+      <p>A report built from 12 months of fictional orders. Change the period and everything updates. Portfolio demo, fictional data.</p>
+      <div class="ctl"><label for="s-period">Reporting period</label><select id="s-period"></select><button class="btn sm ghost-d" id="s-dl">Download CSV report</button></div>
+      <div class="stats" id="s-stats"></div>
+      <div class="two"><div><h4>Monthly revenue</h4><div id="s-chart" role="img" aria-label="Monthly revenue bar chart"></div></div><div><h4>Best-selling products</h4><ol class="top" id="s-top"></ol></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <div class="wrap narrow">
+    <h2>About DataNest</h2>
+    <p>Welcome to DataNest! I specialize in Python-powered Excel automation and data processing, helping businesses save time and eliminate repetitive tasks. From data cleaning and spreadsheet merging to custom scripts and automated reports, I deliver accurate, efficient solutions tailored to your needs. I prioritize clear communication, attention to detail, and client satisfaction. Whether you need a simple spreadsheet cleanup or a custom automation solution, DataNest is here to help. Let's simplify your workflow and bring your project to life!</p>
+    <h3>Technical skills</h3>
+    <ul class="chips"><li>Python</li><li>pandas</li><li>openpyxl</li><li>Microsoft Excel</li><li>CSV processing</li><li>Data cleaning</li><li>Automation</li></ul>
+  </div>
+</section>
+
+<section id="contact" class="sec contact">
+  <div class="wrap narrow">
+    <h2>Let's automate your workflow</h2>
+    <p>Tell me what you do by hand today and I will tell you how to automate it. Message me on Fiverr to discuss your project.</p>
+    <div class="btns c"><a class="btn" href="https://www.fiverr.com/datanestpy" target="_blank" rel="noopener">Hire Me on Fiverr</a><a class="btn ghost" href="https://github.com/Kurosaki-Zangetsu" target="_blank" rel="noopener">View GitHub Profile</a></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>&copy; <span id="yr">2026</span> DataNest &middot; Smart Data. Less Work.</span><span><a href="https://www.fiverr.com/datanestpy" target="_blank" rel="noopener">Fiverr</a> &middot; <a href="https://github.com/Kurosaki-Zangetsu" target="_blank" rel="noopener">GitHub</a></span></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
